@@ -3,9 +3,9 @@ import mongoose from "mongoose";
 // const DB_URL = "mongodb://0.0.0.0:27017/forEben";
 // const DB_URL = "mongodb://127.0.0.1/Eben";
 
-// const localUrl = "mongodb+srv://eben1909:victoria-19@cluster0.u3wri8y.mongodb.net/?retryWrites=true&w=majority";
+const MONGOOSE_DB = "mongodb+srv://eben1909:victoria-19@cluster0.u3wri8y.mongodb.net/?retryWrites=true&w=majority";
 
-const MONGOOSE_DB = "mongodb://127.0.0.1:27017/istgth"
+// const MONGOOSE_DB = "mongodb://127.0.0.1:27017/istgth"
 
 
 
