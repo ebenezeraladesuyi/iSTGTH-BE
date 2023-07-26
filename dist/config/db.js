@@ -16,13 +16,12 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 // const DB_URL = "mongodb://0.0.0.0:27017/forEben";
-// const DB_URL = "mongodb://127.0.0.1/Eben";
-// const MONGOOSE_DB = "mongodb+srv://eben1909:victoria-19@cluster0.u3wri8y.mongodb.net/?retryWrites=true&w=majority";
-const MONGOOSE_DB = "mongodb+srv://eben19:ebenezer19@cluster0.u3wri8y.mongodb.net/?retryWrites=true&w=majority";
-// const url = process.env.MONGOOSE_DB;
+// const DB_URL = "mongodb://127.0.0.1/Eben"
+// const uri = "mongodb+srv://eben19:eben19@cluster0.u3wri8y.mongodb.net/?retryWrites=true&w=majority"
+const uri = "mongodb+srv://eben19:ebenezer19@cluster0.u3wri8y.mongodb.net/";
 const dbConfig = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const conn = yield mongoose_1.default.connect(MONGOOSE_DB);
+        const conn = yield mongoose_1.default.connect(uri);
         console.log(`connected to database on port ${conn.connection.host}`);
     }
     catch (error) {
