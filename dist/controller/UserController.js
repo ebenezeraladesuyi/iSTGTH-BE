@@ -56,6 +56,7 @@ const newUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const { fullName, email, password, businessName, businessContact, businessServices } = req.body;
         const slt = yield bcrypt_1.default.genSalt(10);
         const hash = yield bcrypt_1.default.hash(password, slt);
+        const generateNumber = `${Math.floor(Math.random() * 100000)}`;
         const { secure_url } = yield ((_a = cloudinary_1.default.uploader) === null || _a === void 0 ? void 0 : _a.upload(req === null || req === void 0 ? void 0 : req.file.path));
         const checkExist = yield UserModel_1.default.findOne({ email });
         if (checkExist) {
@@ -71,7 +72,7 @@ const newUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
                 businessName,
                 businessContact,
                 businessServices,
-                MembershipNumber: (exports.getAllUsers === null || exports.getAllUsers === void 0 ? void 0 : exports.getAllUsers.length) + 1,
+                MembershipNumber: generateNumber,
                 memberImage: secure_url,
             });
             return res.status(200).json({

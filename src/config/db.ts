@@ -1,13 +1,13 @@
 import mongoose from "mongoose";
-import env from "dotenv";
-env.config()
+// import env from "dotenv";
+// env.config()
 
 // const DB_URL = "mongodb://0.0.0.0:27017/forEben";
 // const DB_URL = "mongodb://127.0.0.1/Eben"
 
-// const uri = "mongodb+srv://eben19:eben19@cluster0.u3wri8y.mongodb.net/?retryWrites=true&w=majority"
-
 const uri = "mongodb+srv://eben19:ebenezer19@cluster0.u3wri8y.mongodb.net/"
+
+// const uri = process.env.MONGOOSE_DB;
 
 
 const dbConfig = async (): Promise<void> => {

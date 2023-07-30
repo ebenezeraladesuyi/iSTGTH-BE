@@ -53,6 +53,7 @@ export const newUser = async (req: Request, res: Response) => {
 
     const slt = await bcrypt.genSalt(10)
     const hash = await bcrypt.hash(password, slt)
+    const generateNumber = `${Math.floor(Math.random() * 100000)}`;
 
     const {secure_url} = await cloudinary.uploader?.upload(req?.file!.path);
 
@@ -71,7 +72,7 @@ export const newUser = async (req: Request, res: Response) => {
         businessName,
         businessContact,
         businessServices,
-        MembershipNumber : getAllUsers?.length + 1,
+        MembershipNumber : generateNumber,
         memberImage : secure_url,
       });
   
