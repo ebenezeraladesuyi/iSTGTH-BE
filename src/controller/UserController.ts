@@ -47,8 +47,8 @@ export const newUser = async (req: Request, res: Response) => {
       password,
       businessName,
       businessContact,
-      businessServices
-    
+      businessServices,
+      memberImage
     } = req.body;
 
     const slt = await bcrypt.genSalt(10)
@@ -73,7 +73,7 @@ export const newUser = async (req: Request, res: Response) => {
         businessContact,
         businessServices,
         MembershipNumber : generateNumber,
-        memberImage : secure_url,
+        memberImage : secure_url
       });
   
       return res.status(200).json({

@@ -53,7 +53,7 @@ exports.getOneUser = getOneUser;
 const newUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _a;
     try {
-        const { fullName, email, password, businessName, businessContact, businessServices } = req.body;
+        const { fullName, email, password, businessName, businessContact, businessServices, memberImage } = req.body;
         const slt = yield bcrypt_1.default.genSalt(10);
         const hash = yield bcrypt_1.default.hash(password, slt);
         const generateNumber = `${Math.floor(Math.random() * 100000)}`;
@@ -73,7 +73,7 @@ const newUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
                 businessContact,
                 businessServices,
                 MembershipNumber: generateNumber,
-                memberImage: secure_url,
+                memberImage: secure_url
             });
             return res.status(200).json({
                 message: "user created",
